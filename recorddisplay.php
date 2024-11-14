@@ -9,7 +9,7 @@
 <body>
 <div class="wrapper">
     <header>
-        <!-- Header content with navigation -->
+        <!-- Header content with navigation updating-->
     </header>
 
     <section>
