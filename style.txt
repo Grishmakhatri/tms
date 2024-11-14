@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+/* html5doctor.com Reset Stylesheet */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/*------------------------------Main code Index --------------------------*/
+
+
+.wrapper
+{
+    height: 670px;
+    width: 1350px;
+    background-color: #ff7f2a;
+}
+
+header
+{
+    height: 80px;
+    width: 1350px;
+    background-color: #ff7f2a;
+}
+
+section
+{
+    height: 670px;
+    width: 1350px;
+    background-color: #EAECEE;
+}
+
+footer  
+{
+    height: 70px;
+    width: 1350px;
+    background-color: #ff7f2a;
+}
+
+.icon
+{
+    float: left;
+   
+}
+
+.tms
+{
+ float: left;
+ padding: 8px;
+line-height: 70px;
+ padding-left: 15px;
+ display: ;
+ color: black;
+text-decoration: none;
+}
+
+
+li a 
+{
+    color: black;
+    text-decoration: none;
+}
+
+nav
+{
+    float: right;
+    word-spacing: 40px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+nav li
+{
+    display: inline-block;
+    line-height: 80px;
+}
+
+nav ul li a:hover
+{
+    color: #AF7AC5;
+}
+
+nav a.active
+{
+    
+    border: 2px solid #AF7AC5;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+section .img
+{
+    height: 670px;
+    margin-top: 0px;
+    background-image: url("img/home1.jpg");
+}
+
+.box
+{
+    height: 280px;
+    width: 500px;
+    background-color: black;
+    margin-top: 130px ; 
+    opacity: .4;
+    color: white;
+    border-radius: 20px;
+    margin-left: 830px;
+}
+/*-------------------home-------------------------------------------------------------------*/
+
+.box1
+{
+    height: 380px;
+    width: 650px;
+    background-color: #ff7f2aa8;
+    margin-top: 0px ; 
+    opacity: .8;
+    color: #1c45b9;
+    border-radius: 20px;
+    margin-left: 320px;
+}
+
+
+/*-------------------about-------------------------------------------------------------------*/
+.box2
+{
+    height: 278px;
+    width: 450px;
+    background-color: #ff7f2aa8;
+    margin-top: 0px ; 
+    opacity: .8;
+    color: #1c45b9;
+    border-radius: 20px;
+    margin-left: 420px;
+}
+
+/*-------------------contact-------------------------------------------------------------------*/
+ .box3
+{
+    height: 380px;
+    width: 650px;
+    background-color: #ff7f2aa8;
+    margin-top: 0px ; 
+    opacity: .8;
+    color: #1c45b9;
+    border-radius: 40px;
+    margin-left: 320px;
+}
+
+section .fb
+{
+    height: 1%;
+    margin-top: 0%;
+}
+
+section .gamil
+{
+   height: 1%;
+    margin-top: 0%;
+}
+
+section .number
+{
+   height: 1%;
+    margin-top: 0%;
+}
+
+/*----------------------------login---------------------------------------------------------*/
+
+
+
+
+/*----------------------------user-dashboard---------------------------------------------------------*/
+section .user-img
+{
+    height: 670px;
+    margin-top: 0px;
+    background-image: url("img/tms11.jpg");
+}
+
+
+
+/*----------------------------admin-dashboard---------------------------------------------------------*/
+section .admin-img
+{
+    height: 670px;
+    margin-top: 0px;
+    background-image: url("img/tms11.jpg");
+}
+
+/*----------------------------logout---------------------------------------------------------*/
