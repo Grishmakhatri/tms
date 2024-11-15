@@ -19,8 +19,10 @@ if(!isset($_SESSION['admin_name']))
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style type="text/css">
+   
 	
 .dropdown {
   position: relative;
@@ -71,38 +73,54 @@ if(!isset($_SESSION['admin_name']))
   display: block;
 }
 
+.container {
+            width: 90%;
+            max-width: 1200px;}
+
+
+
+
+            @media (min-width: 1024px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+
+
+
 </style>
 
 <body>
 <div class="wrapper">
 	<header>
 		<div class="icon">
-		<a href='http://localhost/raj/adminhome.php'>
+		<a href='http://localhost/tms/adminhome.php'>
         <img src="img/admindash.jpg" height="70px" width="70px"></a></div>
 		<div class="tms">
-		<a href='http://localhost/raj/adminhome.php'style="text-decoration: none"><p style="color:black; font-size: 20px;">Admin DashBoards</p></a>
+		<a href='http://localhost/tms/adminhome.php'style="text-decoration: none"><p style="color:black; font-size: 20px;">Admin DashBoards</p></a>
 	    </div>
 
 		<nav>
                 <ul id='MenuItems'>
-                    <li><a class="active" href='http://localhost/raj/adminhome.php'><b>HOME</a></li>
+                    <li><a class="active" href='http://localhost/tms/adminhome.php'><b>HOME</a></li>
 
                     <li><div class="dropdown" >
  				            <button onclick="myFunction()" class="dropbtn"><b style="background-color:#ff7f2a";>SCHEDULE</b></button>
                    
                     <div id="myDropdown" class="dropdown-content">
-                    <a href="http://localhost/raj/examdisplay.php">Exam</a>
-                    <a href="http://localhost/raj/displaycourse.php">Course</a>
+                    <a href="http://localhost/tms/examdisplay.php">Exam</a>
+                    <a href="http://localhost/tms/displaycourse.php">Course</a>
                     </div>
                     </div></li>
 
 
 
-                    <li><a href='http://localhost/raj/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a href='http://localhost/raj/chatdisplay.php'><b>MESSAGE</b></a></li>
-                    <li><a href='http://localhost/raj/notifydisplay.php'><b>NOTIFICATION</b></a></li>
-                    <li><a href='http://localhost/raj/displayregister.php'><b>REGISTER</b></a></li>
-                    <li><a href='http://localhost/raj/logoutbox.php'><b>LOGOUT</b></a></li> 
+                    <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
+                    <li><a href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
+                    <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
+                    <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
+                    <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 
                 </ul>
         </nav>
 	</header>
@@ -115,6 +133,7 @@ if(!isset($_SESSION['admin_name']))
 				<br><br><br><br><br><br>
 				<h1 style="text-align: center; font-size:40px">Hi!&ensp;   <span><?php echo ucfirst($_SESSION['admin_name'])?></span></h1><br>
 				<h2 style="text-align: justify; font-size:40px; margin-top:40px ; padding-left: 30px; padding-right: 30px;" >&nbsp &emsp; Welcome To the Admin Page </h2>
+
 			</div>
 		</div>
 		</section>
@@ -123,7 +142,7 @@ if(!isset($_SESSION['admin_name']))
 		<footer><br>
 			<p style="color:black; text-align: center; font-style: new time romans"><br>
 				Email: &nbsp tms24@gmail.com &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-				Contact: &nbsp +977 9823267337 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyright ©2022
+				Contact: &nbsp +977 9863857456 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyright ©2024
 			</p>			
 		</footer>
 	</div>
@@ -134,5 +153,11 @@ function myFunction()
     document.getElementById("myDropdown").classList.toggle("show");
 }
 </script>
+
+
+
 </body>
+
+
+
 </html>

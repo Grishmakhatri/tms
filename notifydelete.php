@@ -7,4 +7,4 @@ $query= "DELETE FROM notify where id='$id'";
 $data = mysqli_query($conn,$query);
 
 		?>
-<meta http-equiv="refresh" content="0; url = http://localhost/raj/notifydisplay.php">
+<meta http-equiv="refresh" content="0; url = http://localhost/tms/notifydisplay.php">

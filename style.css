@@ -108,29 +108,29 @@ input, select {
 .wrapper
 {
     height: 670px;
-    width: 1350px;
+    width: 100%;
     background-color: #ff7f2a;
 }
 
 header
 {
     height: 80px;
-    width: 1350px;
-    background-color: #ff7f2a;
+    width: 100%;
+    background-color: #ff8d2a;
 }
 
 section
 {
     height: 670px;
-    width: 1350px;
+    width: 100%;
     background-color: #EAECEE;
 }
 
 footer  
 {
     height: 70px;
-    width: 1350px;
-    background-color: #ff7f2a;
+    width: 100%;
+    background-color: #ff8d2a;
 }
 
 .icon
