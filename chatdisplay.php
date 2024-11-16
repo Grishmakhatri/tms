@@ -75,15 +75,15 @@
 			text-align: center;
 			height: 30px; 
 			padding-top: 5px;
-			border: 3px solid #ffa50059;
-            background-color:#ffa50059;
+			border: 3px solid #cccccc;
+            background-color:#eee;
   }
 
 		th
 		{
 			height: 40px;
 			padding-top: 10px;
-			background-color: #e3ac48;
+			background-color: #eee;
 			
 
 		}

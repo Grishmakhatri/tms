@@ -19,7 +19,6 @@ if(!isset($_SESSION['admin_name']))
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style type="text/css">
    
@@ -27,7 +26,7 @@ if(!isset($_SESSION['admin_name']))
 .dropdown {
   position: relative;
   display: inline-block;
-  border: 2px solid #ff7f2a6e;
+  border: 2px solid #cccccc;
   border-radius: 5px;
   transition: .5s;
   line-height: 20px;
@@ -40,7 +39,7 @@ if(!isset($_SESSION['admin_name']))
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
-  background-color: #ff7f2a6e;
+  background-color: #eee;
 }
 
 .dropbtn:hover 
@@ -51,10 +50,10 @@ if(!isset($_SESSION['admin_name']))
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ff7f2a6e;
+  background-color: #eee;
   min-width: 20px;
   overflow: auto;
-  border: 0px solid #ff7f2a6e;
+  border: 0px solid #cccccc;
   z-index: 1;
   border-radius: 5px;
 }
@@ -73,18 +72,6 @@ if(!isset($_SESSION['admin_name']))
   display: block;
 }
 
-.container {
-            width: 90%;
-            max-width: 1200px;}
-
-
-
-
-            @media (min-width: 1024px) {
-            .container {
-                width: 80%;
-            }
-        }
 
 
 
@@ -106,7 +93,7 @@ if(!isset($_SESSION['admin_name']))
                     <li><a class="active" href='http://localhost/tms/adminhome.php'><b>HOME</a></li>
 
                     <li><div class="dropdown" >
- 				            <button onclick="myFunction()" class="dropbtn"><b style="background-color:#ff7f2a";>SCHEDULE</b></button>
+ 				            <button onclick="myFunction()" class="dropbtn"><b style="background-color:#cccccc";>SCHEDULE</b></button>
                    
                     <div id="myDropdown" class="dropdown-content">
                     <a href="http://localhost/tms/examdisplay.php">Exam</a>

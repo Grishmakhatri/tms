@@ -28,7 +28,7 @@ if(!isset($_SESSION['admin_name']))
 .box5 {
     height: 150px;
     width: 400px;
-    background-color: #ff7f2aa8;
+    background-color: #eee;
     margin-top: px;
     /* opacity: .8; */
     color: #1c45b9;

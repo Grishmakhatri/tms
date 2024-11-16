@@ -14,7 +14,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  border: 2px solid #ff7f2a6e;
+  border: 2px solid #eee;
   border-radius: 5px;
   transition: .5s;
   line-height: 20px;
@@ -27,7 +27,7 @@
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
-  background-color: #ff7f2a6e;
+  background-color: #eee;
 }
 
 .dropbtn:hover 
@@ -38,10 +38,10 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ff7f2a6e;
+  background-color: #eee;
   min-width: 20px;
   overflow: auto;
-  border: 0px solid #ff7f2a6e;
+  border: 0px solid #cccccc;
   z-index: 1;
   border-radius: 5px;
 }
@@ -73,15 +73,15 @@
 			text-align: center;
 			height: 30px; 
 			padding-top: 5px;
-			border: 3px solid #ffa50059;
-            background-color:#ffa50059;
+			border: 3px solid #cccccc;
+            background-color:#eee;
 		}
 
 		th
 		{
 			height: 40px;
 			padding-top: 10px;
-			background-color: #e3ac48;
+			background-color: #eee;
 		}
 
 		td:hover 

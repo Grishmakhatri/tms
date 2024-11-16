@@ -109,14 +109,14 @@ input, select {
 {
     height: 670px;
     width: 100%;
-    background-color: #ff7f2a;
+    background-color: #eee;
 }
 
 header
 {
     height: 80px;
     width: 100%;
-    background-color: #ff8d2a;
+    background-color: #eee;
 }
 
 section
@@ -130,7 +130,7 @@ footer
 {
     height: 70px;
     width: 100%;
-    background-color: #ff8d2a;
+    background-color: #eee;
 }
 
 .icon
@@ -188,7 +188,8 @@ section .img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/home1.jpg");
+/*    background-image: url("img/tms2.jpg");*/
+      background-color: #36373b1a;
 }
 
 .box
@@ -208,7 +209,7 @@ section .img
 {
     height: 380px;
     width: 650px;
-    background-color: #ff7f2aa8;
+    background-color: #eee;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -339,7 +340,7 @@ section .number
    padding:20px;
    border-radius: 20px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-   background:  #ff7f2a;
+   background:  #eee;
    text-align: center;
    width: 500px;
 }
@@ -407,7 +408,7 @@ section .user-img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/tms11.jpg");
+    background-image: url("img/tms20.jpg");
 }
 
 /*----------------------------user-dashboard-Information--------------------------------------------------------*/
@@ -565,7 +566,7 @@ section .admin-img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/tms11.jpg");
+    background-image: url("img/tms20.jpg");
 }
 
 
