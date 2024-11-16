@@ -93,7 +93,7 @@ if(!isset($_SESSION['admin_name']))
   /*position: fixed;*/
   /*bottom: 0;*/
   right: 15px;
-  border: 3px solid #ff7f2a00;
+/*  border: 3px solid #;*/
   z-index: 9;
   border-radius: 15px;
   margin-right: 400px;
@@ -104,7 +104,7 @@ if(!isset($_SESSION['admin_name']))
   max-width: 600px;
     padding: 10px;
         margin-left: 500px;
-    background-color: #ff7f2a;
+    background-color: ##F7B9C4;
     height: 250px;
     width: 390px;
 }
@@ -152,37 +152,9 @@ if(!isset($_SESSION['admin_name']))
 </head>
 <body>
 <div class="wrapper">
-  <header>
-    <div class="icon">
-    <a href='http://localhost/tms/adminhome.php'>
-        <img src="img/admindash.jpg" height="70px" width="70px"></a></div>
-    <div class="tms">
-    <a href='http://localhost/tms/adminhome.php'style="text-decoration: none"><p style="color:black; font-size: 20px;">Admin DashBoards</p></a>
-      </div>
-
-    <nav>
-                <ul id='MenuItems'>
-                    <li><a href='http://localhost/tms/adminhome.php'><b>HOME</a></li>
-                    
-                    <li><div class="dropdown" >
-            <button onclick="myFunction()" class="dropbtn"><b style="background-color:#ff7f2a";>SCHEDULE</b></button>
-                   
-                    <div id="myDropdown" class="dropdown-content">
-                    <a href="http://localhost/tms/examdisplay.php">Exam</a>
-                    <a href="http://localhost/tms/displaycourse.php">Course</a>
-                    </div>
-                    </div></li>
-
-
-
-                    <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a a class="active" href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
-                    <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
-                    <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
-                    <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 
-                </ul>
-        </nav>
-  </header>
+  <?php 
+      require_once "./includes/adminheader.php";
+   ?>
 
   <section>
     <div class="admin-img">
@@ -205,12 +177,9 @@ if(!isset($_SESSION['admin_name']))
     </section>
 
 
-    <footer><br>
-      <p style="color:black; text-align: center; font-style: new time romans"><br>
-        Email: &nbsp tms24@gmail.com &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-        Contact: &nbsp +977 9863857456 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyright ©2024
-      </p>      
-    </footer>
+    <?php 
+      require_once "./includes/adminfooter.php";
+   ?>
   </div>
    <script>
 function myFunction() 

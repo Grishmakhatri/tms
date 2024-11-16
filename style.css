@@ -109,14 +109,17 @@ input, select {
 {
     height: 670px;
     width: 100%;
-    background-color: #eee;
+    background-color: #F3D9ED;
 }
+
+
 
 header
 {
     height: 80px;
     width: 100%;
-    background-color: #eee;
+/*    background-color: #F3D9ED;*/
+    
 }
 
 section
@@ -130,7 +133,7 @@ footer
 {
     height: 70px;
     width: 100%;
-    background-color: #eee;
+    background-color: #F3D9ED;
 }
 
 .icon
@@ -153,7 +156,8 @@ text-decoration: none;
 
 li a 
 {
-    color: black;
+/*    color: black;*/
+    font-style: #4A3267;
     text-decoration: none;
 }
 
@@ -170,11 +174,11 @@ nav li
     display: inline-block;
     line-height: 80px;
 }
-
+/*
 nav ul li a:hover
 {
     color: #AF7AC5;
-}
+}*/
 
 nav a.active
 {
@@ -189,7 +193,7 @@ section .img
     height: 670px;
     margin-top: 0px;
 /*    background-image: url("img/tms2.jpg");*/
-      background-color: #36373b1a;
+      background-color: #f3d9e587;
 }
 
 .box
@@ -209,7 +213,7 @@ section .img
 {
     height: 380px;
     width: 650px;
-    background-color: #eee;
+    background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -223,7 +227,7 @@ section .img
 {
     height: 278px;
     width: 450px;
-    background-color: #ff7f2aa8;
+    background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -236,7 +240,7 @@ section .img
 {
     height: 380px;
     width: 650px;
-    background-color: #ff7f2aa8;
+    background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -340,7 +344,7 @@ section .number
    padding:20px;
    border-radius: 20px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-   background:  #eee;
+   background:  #36373b1a;
    text-align: center;
    width: 500px;
 }
@@ -522,7 +526,7 @@ border-radius: 20px;
 	padding: 8px 10px;
 	font-size: 15px;
 	border: 0;
-	background-color: orange;
+	background-color: #F7B9C4;
 	color: white;
 	cursor: pointer;
 	border-radius: 3px;
@@ -566,7 +570,20 @@ section .admin-img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/tms20.jpg");
+    /* background-image: url("img/tms20.jpg"); */
+    background-color: #f3d9e587;
 }
 
 
+
+
+
+.for_header{
+    background-color: #F7B9C4;
+}
+.for_body{
+    background-color: #F3B9E5;
+}
+.for_font{
+    font-style: #4A3267;
+}
