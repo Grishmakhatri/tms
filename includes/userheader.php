@@ -147,7 +147,7 @@
 
 
                     <li><a href='http://localhost/tms/userrecord.php'><b>INFORMATION</b></a></li>
-                    <li><a href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
+                    <li><a href='http://localhost/tms/userchatdisplay.php'><b>MESSAGE</b></a></li>
                     <li><a href='http://localhost/tms/userchatdisplay.php'><b>NOTIFICATION</b></a></li>
                     <li><a href='http://localhost/tms/usernotify.php'><b>REGISTER</b></a></li>
                     <li><a href='http://localhost/tms/userlogout.php'><b>LOGOUT</b></a></li> 
