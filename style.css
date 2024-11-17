@@ -109,7 +109,7 @@ input, select {
 {
     height: 670px;
     width: 100%;
-    background-color: #F3D9ED;
+    background-color: #F7B9C4;
 }
 
 
@@ -213,7 +213,7 @@ section .img
 {
     height: 380px;
     width: 650px;
-    background-color: #36373b1a;
+    background-color: #F7B9C4;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -227,7 +227,7 @@ section .img
 {
     height: 278px;
     width: 450px;
-    background-color: #36373b1a;
+    background-color: #F7B9C4;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -240,7 +240,7 @@ section .img
 {
     height: 380px;
     width: 650px;
-    background-color: #36373b1a;
+    background-color: #F7B9C4;
     margin-top: 0px ; 
     opacity: .8;
     color: #1c45b9;
@@ -344,7 +344,7 @@ section .number
    padding:20px;
    border-radius: 20px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-   background:  #36373b1a;
+   background:  #F7B9C4;
    text-align: center;
    width: 500px;
 }
@@ -372,7 +372,7 @@ section .number
 
 .form-container1 form .form-btn{
    background: #fbd0d9;
-   color:crimson;
+   color:#F7B9C4;
    text-transform: capitalize;
    font-size: 20px;
    cursor: pointer;
@@ -412,7 +412,8 @@ section .user-img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/tms20.jpg");
+    /* background-image: url("img/tms20.jpg"); */
+    background-color: #f3d9e587;
 }
 
 /*----------------------------user-dashboard-Information--------------------------------------------------------*/
@@ -421,6 +422,7 @@ section .user-img
   margin: 0;
   box-sizing: 
   border-box;
+  
 }
 /*user-information-CRUD*/
 .container2

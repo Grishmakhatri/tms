@@ -105,7 +105,7 @@ if(!isset($_SESSION['user_name']))
   max-width: 600px;
     padding: 10px;
         margin-left: 500px;
-    background-color: #ff7f2a;
+    background-color: #F7B9C4;
     height: 250px;
     width: 390px;
 }
@@ -129,12 +129,12 @@ if(!isset($_SESSION['user_name']))
 
 /* Set a style for the submit/send button */
 .form-container .btn {
-  background-color: #0658ad;
+  background-color: #F7B9C4;
   color: white;
   padding: 8px 20px;;
   border: none;
   cursor: pointer;
-  width: %;
+  /* width: %; */
   margin-bottom:1px;
   opacity: 0.8;
 }
