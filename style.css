@@ -133,7 +133,7 @@ footer
 {
     height: 70px;
     width: 100%;
-    background-color: #F3D9ED;
+    background-color: #F7B9C4;
 }
 
 .icon
@@ -216,7 +216,7 @@ section .img
     background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
-    color: #1c45b9;
+    color: #4A3267;
     border-radius: 20px;
     margin-left: 320px;
 }
@@ -230,7 +230,7 @@ section .img
     background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
-    color: #1c45b9;
+    color: #4A3267;
     border-radius: 20px;
     margin-left: 420px;
 }
@@ -243,7 +243,7 @@ section .img
     background-color: #36373b1a;
     margin-top: 0px ; 
     opacity: .8;
-    color: #1c45b9;
+    color: #4A3267;
     border-radius: 40px;
     margin-left: 320px;
 }
@@ -353,7 +353,7 @@ section .number
    font-size: 30px;
    text-transform: uppercase;
    margin-bottom: 10px;
-   color:#333;
+   color:#4A3267;
 }
 
 .form-container1 form input,
@@ -412,7 +412,8 @@ section .user-img
 {
     height: 670px;
     margin-top: 0px;
-    background-image: url("img/tms20.jpg");
+    /* background-image: url("img/tms20.jpg"); */
+    background-color: #f3d9e587;
 }
 
 /*----------------------------user-dashboard-Information--------------------------------------------------------*/
