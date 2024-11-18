@@ -28,10 +28,10 @@ if(!isset($_SESSION['admin_name']))
 .box5 {
     height: 150px;
     width: 400px;
-    background-color: #eee;
+    background-color:#F7B9C4 ;
     margin-top: px;
     /* opacity: .8; */
-    color: #1c45b9;
+    color: #4A3267;
     border-radius: 20px;
     margin-left: 940px;
 }

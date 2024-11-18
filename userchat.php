@@ -105,7 +105,7 @@ if(!isset($_SESSION['user_name']))
   max-width: 600px;
     padding: 10px;
         margin-left: 500px;
-    background-color: #ff7f2a;
+    background-color: #f7b9c4;
     height: 250px;
     width: 390px;
 }

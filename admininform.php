@@ -110,7 +110,7 @@ else
    $query = mysqli_query($conn,"INSERT INTO inform (fname,lname,gender, email,mobile,address) VALUES('$fname','$lname', '$gender', '$email', '$mobile', '$address')");
 
     ?>
-<meta http-equiv="refresh" content="0; url = http://localhost/raj/recorddisplay.php">
+<meta http-equiv="refresh" content="0; url = http://localhost/tms/recorddisplay.php">
 		<?php
 }
 }

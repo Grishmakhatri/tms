@@ -23,7 +23,7 @@
 .dropbtn
 {
   font-family: new times romans;
-  color: black;
+  color: #4A3267;
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
@@ -47,7 +47,7 @@
 }
 
 .dropdown-content a {
-  color: black;
+  color: #4A3267;
   padding: 10px 10px;
   text-decoration: none;
   display: block;

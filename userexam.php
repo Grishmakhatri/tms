@@ -152,7 +152,7 @@ if($total != 0)
 {
 	?>
 
-<center><caption><font size="5px" color="#636261"><b>All the Teachers are hereby informed that the exam will be conducted as per the following schedule</b></font></caption></center><br><br>
+<center><caption><font size="5px" color="#4A3267"><b>All the Teachers are hereby informed that the exam will be conducted as per the following schedule</b></font></caption></center><br><br>
 	<center>
 
 		<table border="3" cellspacing="7" width="93%">

@@ -68,7 +68,7 @@
 			text-align: center;
 			height: 30px; 
 			padding-top: 5px;
-			border: 3px solid #cccccc;
+			border: 3px solid #f7b9c4;
             background-color:#eee;
   }
 
@@ -83,7 +83,7 @@
 
 		td:hover 
 		{
-			background-color: #FEB51C;
+			background-color: #f7b9c4;
 		}
 
 		.delete ,.chat

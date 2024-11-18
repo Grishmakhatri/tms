@@ -104,7 +104,7 @@ if(!isset($_SESSION['admin_name']))
   max-width: 600px;
     padding: 10px;
         margin-left: 500px;
-    background-color: ##F7B9C4;
+    background-color: #f7b9c4;
     height: 250px;
     width: 390px;
 }

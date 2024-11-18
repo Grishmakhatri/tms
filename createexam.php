@@ -64,39 +64,10 @@
 
 <body>
 <div class="wrapper">
-	<header>
-		<div class="icon">
-		<a href='http://localhost/tms/adminhome.php'>
-        <img src="img/admindash.jpg" height="70px" width="70px"></a></div>
-		<div class="tms">
-		<a href='http://localhost/tms/adminhome.php'style="text-decoration: none"><p style="color:black; font-size: 20px;">Admin DashBoards</p></a>
-	    </div>
+<?php 
+      require_once "./includes/adminheader.php";
+   ?>
 
-		<nav>
-                <ul id='MenuItems'>
-                    <li><a href='http://localhost/tms/adminhome.php'><b>HOME</a></li>
-                   
-
-
-                   <li><div class="dropdown" >
- 				    <button onclick="myFunction()" class="dropbtn"><b style="background-color:#ff7f2a";><a class="active">SCHEDULE</a></b></button>
-                   
-                    <div id="myDropdown" class="dropdown-content">
-                    <a href="http://localhost/tms/examdisplay.php">Exam</a>
-                    <a href="http://localhost/tms/displaycourse.php">Course</a>
-                    </div>
-                    </div></li>
-
-
-
-                    <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
-                    <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
-                    <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
-                    <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 
-                </ul>
-        </nav>
-	</header>
 
 	<section>
 		<div class="admin-img">
@@ -176,12 +147,10 @@ $sql=mysqli_query($conn,$query);
 		</section>
 
 
-		<footer><br>
-			<p style="color:black; text-align: center; font-style: new time romans"><br>
-				Email: &nbsp tms24@gmail.com &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-				Contact: &nbsp +977 9863857456 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; copyright ©2024
-			</p>			
-		</footer>
+		<?php 
+      require_once "./includes/adminfooter.php";
+   ?>
+
 	</div>
 	<script>
 function myFunction() 
