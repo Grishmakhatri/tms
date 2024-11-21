@@ -98,21 +98,21 @@
             $total_pages = ceil($total_rows / $records_per_page);
             $paginated_results = array_slice($results, $offset, $records_per_page);
 
-        // $filteredBooks = array_filter($allBooks, function ($book) use ($searchTerm){
-        //     if (preg_match('/[a-ZA-Z]$/', $searchTerm)) {
-        //         return strcasecmp($book->title, $searchTerm) === 0;
-        //     }
-        //     return stripos($book->title, $searchTerm) !== false; || stripos($book->author, $searchTerm) !== false;
-        // });
+        $filteredBooks = array_filter($allBooks, function ($book) use ($searchTerm){
+            if (preg_match('/[a-ZA-Z]$/', $searchTerm)) {
+                return strcasecmp($book->title, $searchTerm) === 0;
+            }
+            return stripos($book->title, $searchTerm) !== false; || stripos($book->author, $searchTerm) !== false;
+        });
 
 
 
-        // echo '<pre>';
-        // print_r($filteredBooks);
+        echo '<pre>';
+        print_r($filteredBooks);
 
-        //     print_r($paginated_results);
-        //  echo '</pre>';
-        //     die;
+            print_r($paginated_results);
+         echo '</pre>';
+            die;
         
            
                 ?>
