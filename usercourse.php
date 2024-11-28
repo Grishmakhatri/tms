@@ -158,7 +158,8 @@ if($total != 0)
 		<th width="10%">Day</th>
 		<th width="10%">Time</th>
 		<th width="20%">Subject</th>
-		<th width="15%">Teacher</th>
+		<th width="15%">Faculties</th>
+		<th width="15%">Faculty</th>
 		</tr>
 
 	<?php
@@ -168,7 +169,9 @@ if($total != 0)
 		      <td>".$result['day']."</td>
 		      <td>".$result['time']."</td>
 		      <td>".$result['subject']."</td>
-		      <td>".$result['teacher']."</td> 
+		      <td>".$result['faculties']."</td> 
+			  <td>".$result['faculty']."</td> 
+			  
 		</tr>
 		";  
     }
@@ -184,7 +187,8 @@ if($total != 0)
 		<th width="10%">Day</th>
 		<th width="10%">Time</th>
 		<th width="20%">Subject</th>
-		<th width="15%">Teacher</th>
+		<th width="15%">Faculties</th>
+		<th width="15%">Faculty</th>
 		</tr>
 </table>
 
@@ -194,6 +198,7 @@ if($total != 0)
 		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
 		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
 		      echo"<th style='width:20%';>";echo "empty"; echo"</th>";
+			  echo"<th style='width:15%';>";echo "empty"; echo"</th>"; 
 		      echo"<th style='width:15%';>";echo "empty"; echo"</th>";  
 		echo"</tr>";
       echo "</table>";

@@ -183,7 +183,8 @@ if($total != 0)
 		<th width="10%">Day</th>
 		<th width="10%">Time</th>
 		<th width="20%">Subject</th>
-		<th width="15%">Teacher</th>
+		<th width="15%">Faculties</th>
+		<th width="15%">Faculty</th>
 		<th width="10%">Operations</th>
 		</tr>
 		
@@ -195,7 +196,9 @@ if($total != 0)
 		      <td>".$result['day']."</td>
 		      <td>".$result['time']."</td>
 		      <td>".$result['subject']."</td>
-		      <td>".$result['teacher']."</td>
+		      <td>".$result['faculties']."</td>
+			  <td>".$result['faculty']."</td>
+			  
 
 		      <td><a href='updatecourse.php?id=$result[id]'><input type='submit' value='Update' class='update'></a>
 
@@ -216,7 +219,8 @@ if($total != 0)
 		<th width="10%">Date</th>
 		<th width="10%">Time</th>
 		<th width="20%">Subject</th>
-		<th width="15%">Teacher</th>
+		<th width="15%">Faculties</th>
+		<th width="15%">Faculty</th>
 		<th width="10%">Operations</th>
 		</tr>
 </table>

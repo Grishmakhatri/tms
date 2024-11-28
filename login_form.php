@@ -23,6 +23,9 @@ if(isset($_POST['submit']))
 
       $row = mysqli_fetch_array($result);
 
+      // echo '<pre>';
+      // print_r($row);
+      // die;
       if($row['user_type'] == 'Admin' || $row['user_type'] == 'Co-Admin')
 
       {
@@ -34,6 +37,7 @@ if(isset($_POST['submit']))
 
       {
          $_SESSION['user_name'] = $row['name'];
+         $_SESSION['user_id'] = $row['id'];
          header('location:userhome.php');
       }
      

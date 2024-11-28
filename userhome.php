@@ -2,7 +2,8 @@
 @include 'config.php';
 
 session_start();
-
+// print_r($_SESSION);
+// die;
 if(!isset($_SESSION['user_name']))
 
 {

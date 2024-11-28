@@ -1,4 +1,3 @@
-
 <html>
 <head>
 	<title>chats Display</title>

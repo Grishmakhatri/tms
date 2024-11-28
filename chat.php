@@ -133,7 +133,7 @@ if(!isset($_SESSION['admin_name']))
   padding: 8px 20px;;
   border: none;
   cursor: pointer;
-  width: %;
+  width:%;
   margin-bottom:1px;
   opacity: 0.8;
 }
@@ -170,6 +170,7 @@ if(!isset($_SESSION['admin_name']))
    <br><br>
     <textarea placeholder="  Type message.." name="message" required></textarea>
 
+   
     <button type="submit" class="btn" name="sent">Send</button>
    
   </form>

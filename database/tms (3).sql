@@ -26,13 +26,15 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `chat`
 --
+CREATE TABLE chat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    teacher_id INT NOT NULL,
+    message TEXT NOT NULL,
+    date DATETIME NOT NULL,
+    admin_name VARCHAR(255) NOT NULL,
+    FOREIGN KEY (teacher_id) REFERENCES teachers(id)
+);
 
-CREATE TABLE `chat` (
-  `id` int(100) NOT NULL,
-  `date` varchar(255) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `message` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `chat`
@@ -54,14 +56,14 @@ CREATE TABLE `course` (
   `day` varchar(255) NOT NULL,
   `time` varchar(255) NOT NULL,
   `subject` varchar(100) NOT NULL,
-  `teacher` varchar(100) NOT NULL
+  `faculties` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`id`, `day`, `time`, `subject`, `teacher`) VALUES
+INSERT INTO `course` (`id`, `day`, `time`, `subject`, `faculties`) VALUES
 (13, 'Monday', '6:30 am -- 7:30 am', 'Science', 'Puspa Shakya'),
 (14, 'Monday', '9:00 am -- 9:30 am', 'Math', 'Susan Budhathoki'),
 (15, 'Monday', '7:30 am -- 8:30 am', 'English', 'Bima Pokheral');

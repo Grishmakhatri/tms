@@ -235,10 +235,26 @@ $sql=mysqli_query($conn,$query);
 		 <label>Subject</label>
 		 <input type="text" value="<?php echo $result['subject'];?>" class="input" name="subject" required>
 	</div>
+	<div class="input_field">
+    <label>Faculty</label>
+    <div class="custom_box">
+        <select name="faculty" required>
+            <option value="">Select Faculty</option>
+            <option value="BCA" <?php if($result['faculty'] == 'BCA') echo 'selected'; ?>>BCA</option>
+            <option value="BBA" <?php if($result['faculty'] == 'BBA') echo 'selected'; ?>>BBA</option>
+            <option value="BBS" <?php if($result['faculty'] == 'BBS') echo 'selected'; ?>>BBS</option>
+            <option value="MBA" <?php if($result['faculty'] == 'MBA') echo 'selected'; ?>>MBA</option>
+            <option value="MBS" <?php if($result['faculty'] == 'MBS') echo 'selected'; ?>>MBS</option>
+            <option value="MA Sociology" <?php if($result['faculty'] == 'MA Sociology') echo 'selected'; ?>>MA Sociology</option>
+        </select>
+    </div>
+</div>
+
 
 	<div class="input_field">
 		<input type="submit" value="Update" class="btn" name="update">	
 	</div>
+	
 </form>
 </div>
 </div>
@@ -275,9 +291,12 @@ if(isset($_POST['update']))
 	$time = $_POST['time'];
 	$subject = ucfirst($_POST['subject']);
 	$teacher = $_POST['teacher'];
+	$faculty = $_POST['faculty'];
+
 	
 
 	$query = "UPDATE course set day='$day',time='$time', subject='$subject', teacher='$teacher' WHERE id='$id' ";
+    $query = "UPDATE course SET day='$day', time='$time', subject='$subject', teacher='$teacher', faculty='$faculty' WHERE id='$id'";
 
 	$data = mysqli_query($conn,$query);
 
