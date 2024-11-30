@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-	<title>
-		Display Record
-	</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>chats Display</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1">
 
 	<style type="text/css">
 		
-
 	
 .dropdown {
   position: relative;
@@ -63,27 +60,31 @@
 
 
 
-
 		body
 		{
 		
 	height: 670px;
     margin-top: 0px;
 		}
-	table, tr ,td,th
+
+		
+	table,tr ,th,td
 		{
+			
+			
 			text-align: center;
 			height: 30px; 
 			padding-top: 5px;
 			border: 3px solid #ffa50059;
             background-color:#ffa50059;
-		}
+  }
 
 		th
 		{
 			height: 40px;
 			padding-top: 10px;
 			background-color: #e3ac48;
+			
 
 		}
 
@@ -92,7 +93,7 @@
 			background-color: #FEB51C;
 		}
 
-		.update ,.delete ,.add
+		.delete ,.chat
 		{
 			background-color: green;
 			color: white;
@@ -117,25 +118,19 @@
 			background-color: #e74b4b;
 		}
 
-		.update:hover 
-		{
-			background-color: #64d064;
-		}
 
-		.add 
+		.chat 
 		{
 			background-color: #0d7f8f;
 		}
 
-		.add:hover 
+		.chat:hover 
 		{
 			background-color: #7ed6d6;
 		}
 		
 	</style>
-
 </head>
-
 <body>
 <div class="wrapper">
 	<header>
@@ -150,9 +145,7 @@
                 <ul id='MenuItems'>
                     <li><a href='http://localhost/tms/adminhome.php'><b>HOME</a></li>
                     
-
-
-                     <li><div class="dropdown" >
+                    <li><div class="dropdown" >
  				    <button onclick="myFunction()" class="dropbtn"><b style="background-color:#ff7f2a";>SCHEDULE</b></button>
                    
                     <div id="myDropdown" class="dropdown-content">
@@ -163,8 +156,8 @@
 
 
 
-                    <li><a class="active" href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a href='http://localhost/tms/message.php'><b>MESSAGE</b></a></li>
+                    <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
+                    <li><a a class="active" href='http://localhost/tms/message.php'><b>MESSAGE</b></a></li>
                     <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
                     <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
                     <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 
@@ -174,8 +167,9 @@
 
 	<section>
 		<div class="admin-img">
-			<br><br>
+			<br><br><br>
 			
+
 			
 
 
@@ -184,23 +178,21 @@
 include("config.php");
 error_reporting(0);
 
-$sort = "";
-if(isset($_GET['sort_alphabet']))
+session_start();
+
+if(!isset($_SESSION['admin_name']))
+
 {
- if($_GET['sort_alphabet'] == "a-z")
-   {
-      $sort = "ASC";
-   }
-     elseif($_GET['sort_alphabet'] == "z-a")
-      {
-         $sort = "DESC";
-    }
+	
 }
-                                        
-                                       
 
-$query= "SELECT * FROM inform ORDER BY fname $sort";
-
+if(isset($_SESSION['user_name']))
+{
+    $query = "SELECT * FROM users WHERE user_type = 'Admin'";
+}
+else{
+    $query = "SELECT * FROM users WHERE user_type = 'User'";
+}
 $data = mysqli_query($conn,$query);
 
 $total = mysqli_num_rows($data); 
@@ -213,117 +205,83 @@ $total = mysqli_num_rows($data);
 if($total != 0)
 {
 	?>
-<?php //if ?>
 
-<input type="text" id="searchInput" placeholder="Search by Firstname or Lastname" style="margin-bottom: 20px;">
-<button onclick="performBinarySearch()">Search</button>
+	<h3 align="center"><a href='chat.php'><input type='submit' value='Add Chat' class='chat'></a></h3><br>
+	<center><table border="3" cellspacing="7" width="60%">
+		<tr><th width="10%" height="40px">Conversation</th></tr>
 
-
-
-	<h3 align="center"><a href='admininform.php'><input type='submit' value='Add Record' class='add'></a></h3><br>
-	<center><table border="3" cellspacing="7" width="93%">
-		<tr><th width="10%" height="40px" style="text-align:center">Teachers Information</th></tr>
-	<!-- table topic banaulai xai table collabration gare -->
-		<table border="3" cellspacing="7" width="93%">
+		<table class="table" border="3" cellspacing="7" width="60%">
 		<tr>
-		
-		<th width="8%">First Name</th>
-		<th width="8%">Last Name</th>
-		<th width="10%">Gender</th>
-		<th width="15%">Email</th>
-		<th width="10%">Mobile</th>
-		<th width="10%">Address</th>
-		<th width="10%">Operations</th>
+		<th width="10%">User</th>
+		<th width="5%">Open</th>
 		</tr>
+		
 
-	
-
-	 <?php
-		while($result = mysqli_fetch_assoc($data))
+	<?php
+	while($result = mysqli_fetch_assoc($data))
 	{
-		echo "<tr>
-		     
-		      <td>".$result['fname']."</td>
-		      <td>".$result['lname']."</td>
-		      <td>".$result['gender']."</td>
-		      <td>".$result['email']."</td>
-		      <td>".$result['mobile']."</td>
-		      <td>".$result['address']."</td>
-
-		     <td><a href='updaterecord.php?id=$result[id]'><input type='submit' value='Update' class='update'></a>
-
-		      <a href='recorddelete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>   
-			</tr>";  
+	echo "<tr>
+		      <td>".$result['name']."</td>
+		      <td>
+		      <a href='chatdisplay.php?id=$result[id]'><input value='Open' class='delete' ></a></td>   
+		</tr>
+		";  
     }
-} 
-else
+}else
 {
 	?>
+	<h3 align="center"><a href='chat.php'><input type='submit' value='Add Chat' class='chat'></a></h3><br>
+	<center><table border="3" cellspacing="7" width="60%">
+		<tr><th width="10%" height="40px">Conversation</th></tr>
 
-
-	<h3 align="center"><a href='admininform.php'><input type='submit' value='Add Record' class='add'></a></h3><br>
-	<center><table border="3" cellspacing="7" width="93%">
-		<tr><th width="10%" height="40px" style="text-align:center">Teachers Information</th></tr>
-
-		<table border="3" cellspacing="7" width="93%">
-		<tr>
-		
-		<th width="8%">First Name</th>
-		<th width="8%">Last Name</th>
-		<th width="10%">Gender</th>
-		<th width="15%">Email</th>
-		<th width="10%">Mobile</th>
-		<th width="10%">Address</th>
-		<th width="10%">Operations</th>
+		<table class="table" border="3" cellspacing="7" width="60%">
+	<tr>
+		<th width="10%">Date/Time</th>
+		<th width="10%">Username</th>
+		<th width="20%">Message</th>
+		<th width="5%">Operations</th>
 		</tr>
+</table>
 
-<?php
-echo "<table style='width:93%';>";
+		<?php
+	echo "<table style='width:60%';>";
 	echo "<tr>";
+		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
+		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
+		      echo"<th style='width:20%';>";echo "empty"; echo"</th>";
 		      
-		      echo"<th style='width:8%';>";echo "empty"; echo"</th>";
-		      echo"<th style='width:8%';>";echo "empty"; echo"</th>";
-		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
-		      echo"<th style='width:15%';>";echo "empty"; echo"</th>";
-		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
-		      echo"<th style='width:10%';>";echo "empty"; echo"</th>";
 
-		      echo"<th style='width:10%';>"; echo"<a href='recorddisplay.php'>";echo"<input type='submit' value='Update' class='update' onclick='return checkdata()'>";echo"</a>";
+		      echo"<th style='width:5%';>";
+		      
 
-		      echo "   ";
-
-		      echo"<a href='recorddisplay.php'>";echo"<input type='submit' value='Delete' class='delete' onclick='return checkdata()'>";echo"</a>";echo"</th>";   
+		      echo"<a href='chatdisplay.php'>";echo"<input type='submit' value='Delete' class='delete' onclick='return checkdata()'>";echo"</a>";echo"</th>";   
 		echo"</tr>";
       echo "</table>";
+		
 
 }
 
 ?>
 
 </table>
-</table>
 </center>
 
 <script type="text/javascript">
 	function checkdelete()
 	{
-		return confirm('Are you sure you want to delete');
+		return confirm('Are you sure you want to delete message');
 	}
-
 </script>
 
 <script type="text/javascript">
 
 	function checkdata()
 	{
-		return confirm('Sorry! your data is empty');
+		return confirm('Sorry! Cannot Delete ');
 	}
 </script>
 
-
-
-
-		</div>
+</div>
 		</section>
 
 
@@ -339,22 +297,6 @@ function myFunction()
 {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
-
-
 </script>
 </body>
 </html>
-
-
-
-
-
-
-		
-
-
-
-
-
-

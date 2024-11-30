@@ -27,6 +27,7 @@ if(isset($_POST['submit']))
 
       {
          $_SESSION['admin_name'] = $row['name'];
+         $_SESSION['id'] = $row['id'];
          header('location:adminhome.php');
       }
 
@@ -34,6 +35,7 @@ if(isset($_POST['submit']))
 
       {
          $_SESSION['user_name'] = $row['name'];
+         $_SESSION['id'] = $row['id'];
          header('location:userhome.php');
       }
      

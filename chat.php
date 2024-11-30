@@ -238,7 +238,7 @@ if(isset($_POST['sent']))
  
   
 
-  $query = "INSERT INTO chat (date, username, message) VALUES('$date','$username', '$message')";
+  $query = "INSERT INTO chat (date, message, sender_id, receiver_id) VALUES('$date','$message', '$_GET[id]', '$_SESSION[id]')";
 
   $data = mysqli_query($conn,$query);
 

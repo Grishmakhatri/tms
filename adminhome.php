@@ -117,7 +117,7 @@ if(!isset($_SESSION['admin_name']))
 
 
                     <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
+                    <li><a href='http://localhost/tms/message.php'><b>MESSAGE</b></a></li>
                     <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
                     <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
                     <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 

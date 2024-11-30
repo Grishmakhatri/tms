@@ -157,7 +157,7 @@
 
 
                     <li><a href='http://localhost/tms/recorddisplay.php'><b>INFORMATION</b></a></li>
-                    <li><a a class="active" href='http://localhost/tms/chatdisplay.php'><b>MESSAGE</b></a></li>
+                    <li><a a class="active" href='http://localhost/tms/message.php'><b>MESSAGE</b></a></li>
                     <li><a href='http://localhost/tms/notifydisplay.php'><b>NOTIFICATION</b></a></li>
                     <li><a href='http://localhost/tms/displayregister.php'><b>REGISTER</b></a></li>
                     <li><a href='http://localhost/tms/logoutbox.php'><b>LOGOUT</b></a></li> 
@@ -180,14 +180,13 @@ error_reporting(0);
 
 session_start();
 
-if(!isset($_SESSION['admin_name']))
 
-{
-	
-}
+$id1 = $_GET['id'];
+$id2 = $_SESSION['id'];
 
+// $query= "SELECT * FROM chat WHERE sender_id = $id1 && receiver_id = $id2 || sender_id = $id2 && receiver_id = $id1 ORDER BY date DESC";
+$query= "SELECT *, users.name as username FROM chat join users on chat.sender_id = users.id WHERE chat.sender_id = $id1 && chat.receiver_id = $id2 || chat.sender_id = $id2 && chat.receiver_id = $id1 ORDER BY chat.date DESC";
 
-$query= "SELECT * FROM chat";
 $data = mysqli_query($conn,$query);
 
 $total = mysqli_num_rows($data); 
@@ -201,7 +200,7 @@ if($total != 0)
 {
 	?>
 
-	<h3 align="center"><a href='chat.php'><input type='submit' value='Add Chat' class='chat'></a></h3><br>
+	<h3 align="center"><a href='chat.php?id=<?php echo $id1 ?>'><input type='submit' value='Add Chat' class='chat'></a></h3><br>
 	<center><table border="3" cellspacing="7" width="60%">
 		<tr><th width="10%" height="40px">Conversation</th></tr>
 
