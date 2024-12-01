@@ -3,11 +3,16 @@
 
 session_start();
 
-if(!isset($_SESSION['admin_name']))
+// if(!isset($_SESSION['admin_name']))
 
-{
+// {
   
-}
+// }
+
+
+$query= "SELECT * FROM users WHERE user_type='User'";
+      $data = mysqli_query($conn,$query);
+      $total = mysqli_num_rows($data);
 ?>
 
 <html>
@@ -133,7 +138,7 @@ if(!isset($_SESSION['admin_name']))
   padding: 8px 20px;;
   border: none;
   cursor: pointer;
-  width:%;
+  /* width:%; */
   margin-bottom:1px;
   opacity: 0.8;
 }
@@ -166,6 +171,20 @@ if(!isset($_SESSION['admin_name']))
     <center><h1>Chat</h1></center>
 <br>
 
+
+<select name="admin_id" > 
+    <?php 
+
+    // print_r($_SESSION['user_id']);
+    // die;
+    if($total > 0) {
+      while($result = mysqli_fetch_assoc($data))
+	    {
+       ?>
+
+      <option value="<?php echo $result['id']; ?>"> <?php echo $result['name']; ?> </option>  
+     <?php } }?>
+  </select>
     <label for="msg"><b>&nbsp;Message</b></label>
    <br><br>
     <textarea placeholder="  Type message.." name="message" required></textarea>
@@ -192,23 +211,29 @@ function myFunction()
 </html>
 
 <?php
-include("config.php");
-
+// include("config.php");
 
 if(isset($_POST['sent'])) 
 {
   
-   date_default_timezone_set('Asia/Kathmandu');
-   $date = date('Y-m-d h:iA');
+  //  date_default_timezone_set('Asia/Kathmandu');
+  //  $date = date('Y-m-d h:iA');
 
-  $username = ucfirst ($_SESSION['admin_name']);
+  // $username = ucfirst ($_SESSION['admin_name']);
 
+  // $message = $_POST['message'];
+
+ 
+  $username = ucfirst ($_SESSION['user_name']);
+ $userId = $_POST['user_id'];
+ $adminId = $_POST['admin_id'];
   $message = $_POST['message'];
-
+  
+   $query = "INSERT INTO chat ( user_id, admin_id, message) VALUES('$userId','$adminId', '$message')";
  
   
 
-  $query = "INSERT INTO chat (date, username, message) VALUES('$date','$username', '$message')";
+  // $query = "INSERT INTO chat (date, username, message) VALUES('$date','$username', '$message')";
 
   $data = mysqli_query($conn,$query);
 

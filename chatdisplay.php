@@ -34,22 +34,26 @@ error_reporting(0);
 
 session_start();
 
-if(!isset($_SESSION['admin_name']))
+// if(!isset($_SESSION['admin_name']))
 
-{
+// {
 	
-}
+// }
 
 
-$query= "SELECT * FROM chat";
+// $query= "SELECT * FROM chat";
+
+// print_r($_SESSION);
+$adminId = $_SESSION['admin_id'];
+// echo $userId;
+
+$query= "SELECT * FROM chat WHERE admin_id = '$adminId'";
+// echo $query;
+// die;
+
 $data = mysqli_query($conn,$query);
 
 $total = mysqli_num_rows($data); 
-
-
-
-
-//echo $total;
 
 if($total != 0)
 {
@@ -71,14 +75,18 @@ if($total != 0)
 	<?php
 	while($result = mysqli_fetch_assoc($data))
 	{
-	echo "<tr>
-		      <td>".$result['date']."</td>
-		      <td>".$result['username']."</td>
-		      <td>".$result['message']."</td>
-		      <td>
-		      <a href='chatdelete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>   
-		</tr>
-		";  
+
+		$qry= "SELECT * FROM users WHERE id = '".$result['user_id']."'";
+		$dt = mysqli_query($conn,$qry);
+		$res = mysqli_fetch_assoc($dt);
+		echo "<tr>
+				<td>".$result['date']."</td>
+				<td>".$res['name']."</td>
+				<td>".$result['message']."</td>
+				<td>
+				<a href='chatdelete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>   
+			</tr>
+			";  
     }
 }else
 {

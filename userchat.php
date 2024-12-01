@@ -3,11 +3,11 @@
 
 session_start();
 
-if(!isset($_SESSION['user_name']))
+// if(!isset($_SESSION['user_name']))
 
-{
+// {
   
-}
+// }
 ?>
 
 <html>
@@ -134,7 +134,7 @@ if(!isset($_SESSION['user_name']))
   padding: 8px 20px;;
   border: none;
   cursor: pointer;
-  width: %;
+  /* width: %; */
   margin-bottom:1px;
   opacity: 0.8;
 }
@@ -159,6 +159,14 @@ if(!isset($_SESSION['user_name']))
 <div class="wrapper">
     <?php 
       require_once "./includes/userheader.php";
+
+      $query= "SELECT * FROM users WHERE user_type='Admin'";
+      $data = mysqli_query($conn,$query);
+      $total = mysqli_num_rows($data); 
+      // echo $query;
+      // print_r($data);
+      // echo $total;
+      // die;
    ?>
 
   <section>
@@ -175,8 +183,24 @@ if(!isset($_SESSION['user_name']))
 
     <label for="msg"><b>&nbsp;Message</b></label>
    <br><br>
-    <textarea placeholder="  Type message.." name="message" required></textarea>
 
+   <select name="admin_id" > 
+    <?php 
+
+    // print_r($_SESSION['user_id']);
+    // die;
+    if($total > 0) {
+      while($result = mysqli_fetch_assoc($data))
+	    {
+       ?>
+
+      <option value="<?php echo $result['id']; ?>"> <?php echo $result['name']; ?> </option>  
+     <?php } }?>
+  </select>
+    <textarea placeholder="  Type message.." name="message" required></textarea>
+    
+    <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>" name="user_id" />
+    
     <button type="submit" class="btn" name="sent">Send</button>
    
   </form>
@@ -204,16 +228,16 @@ include("config.php");
 if(isset($_POST['sent'])) 
 {
   
-date_default_timezone_set('Asia/Kathmandu');
-   $date = date('Y-m-d h:iA');
+// date_default_timezone_set('Asia/Kathmandu');
+  //  $date = date('Y-m-d h:iA');
 
 $username = ucfirst ($_SESSION['user_name']);
-
+ $userId = $_POST['user_id'];
+ $adminId = $_POST['admin_id'];
   $message = $_POST['message'];
   
-
-   $query = "INSERT INTO chat ( date, username, message) VALUES('$date','$username', '$message')";
-
+   $query = "INSERT INTO chat ( user_id, admin_id, message) VALUES('$userId','$adminId', '$message')";
+ 
   $data = mysqli_query($conn,$query);
 
   if($data)

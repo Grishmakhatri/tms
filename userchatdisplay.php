@@ -146,20 +146,29 @@
 
 
 <?php
+
 include("config.php");
 error_reporting(0);
+// print_r($_SESSION);
 
 session_start();
+print_r($_SESSION);
 
-if(!isset($_SESSION['user_name']))
+// if(!isset($_SESSION['user_name']))
 
-{
+// {
 	
-}
+// }
 
+print_r($_POST);
+print_r($_SESSION['user_name']);
 
+$userId = $_SESSION['user_id'];
+echo $userId;
 
-$query= "SELECT * FROM chat";
+$query= "SELECT * FROM chat WHERE user_id = '$userId'";
+// echo $query;
+// die;
 $data = mysqli_query($conn,$query);
 
 $total = mysqli_num_rows($data); 
@@ -188,9 +197,15 @@ if($total != 0)
 	<?php
 	while($result = mysqli_fetch_assoc($data))
 	{
+		$qry= "SELECT * FROM users WHERE id = '".$result['admin_id']."'";
+		
+		$dt = mysqli_query($conn,$qry);
+		$res = mysqli_fetch_assoc($dt);
+		print_r($res);
+		die;
 	echo "<tr>
 		      <td>".$result['date']."</td>
-		      <td>".$result['username']."</td>
+		      <td>".$res['name']."</td>
 		      <td>".$result['message']."</td>      
 		</tr>
 		";  
