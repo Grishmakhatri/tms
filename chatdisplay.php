@@ -1,5 +1,11 @@
 
+<?php
+@include 'config.php';
 
+session_start();
+
+error_reporting(0);
+?>
 <html>
 <head>
 	<title>chats Display</title>
@@ -24,32 +30,24 @@
 			<br><br><br>
 			
 
-			
-
-
-
 <?php
-include("config.php");
-error_reporting(0);
 
-session_start();
-
-// if(!isset($_SESSION['admin_name']))
-
-// {
-	
-// }
-
-
-// $query= "SELECT * FROM chat";
-
-// print_r($_SESSION);
 $adminId = $_SESSION['admin_id'];
-// echo $userId;
 
-$query= "SELECT * FROM chat WHERE admin_id = '$adminId'";
-// echo $query;
-// die;
+$query = "
+    SELECT 
+        chat.id,    
+        chat.message,
+        chat.date,
+        users.name AS sender_user_name
+    FROM 
+        chat 
+    JOIN 
+        users ON chat.sender_id = users.id
+    WHERE chat.receiver_id = $adminId
+    AND chat.sender_type = 'user'
+    ORDER BY chat.date DESC
+";
 
 $data = mysqli_query($conn,$query);
 
@@ -76,12 +74,10 @@ if($total != 0)
 	while($result = mysqli_fetch_assoc($data))
 	{
 
-		$qry= "SELECT * FROM users WHERE id = '".$result['user_id']."'";
-		$dt = mysqli_query($conn,$qry);
-		$res = mysqli_fetch_assoc($dt);
+		
 		echo "<tr>
 				<td>".$result['date']."</td>
-				<td>".$res['name']."</td>
+				<td>".$result['sender_user_name']."</td>
 				<td>".$result['message']."</td>
 				<td>
 				<a href='chatdelete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>   

@@ -3,11 +3,6 @@
 
 session_start();
 
-// if(!isset($_SESSION['user_name']))
-
-// {
-  
-// }
 ?>
 
 <html>
@@ -163,10 +158,7 @@ session_start();
       $query= "SELECT * FROM users WHERE user_type='Admin'";
       $data = mysqli_query($conn,$query);
       $total = mysqli_num_rows($data); 
-      // echo $query;
-      // print_r($data);
-      // echo $total;
-      // die;
+
    ?>
 
   <section>
@@ -184,11 +176,9 @@ session_start();
     <label for="msg"><b>&nbsp;Message</b></label>
    <br><br>
 
-   <select name="admin_id" > 
+   <select name="receiver_id" > 
     <?php 
 
-    // print_r($_SESSION['user_id']);
-    // die;
     if($total > 0) {
       while($result = mysqli_fetch_assoc($data))
 	    {
@@ -199,7 +189,7 @@ session_start();
   </select>
     <textarea placeholder="  Type message.." name="message" required></textarea>
     
-    <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>" name="user_id" />
+    <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>" name="sender_id" />
     
     <button type="submit" class="btn" name="sent">Send</button>
    
@@ -222,7 +212,7 @@ function myFunction()
 </html>
 
 <?php
-include("config.php");
+// include("config.php");
 
 
 if(isset($_POST['sent'])) 
@@ -231,13 +221,12 @@ if(isset($_POST['sent']))
 // date_default_timezone_set('Asia/Kathmandu');
   //  $date = date('Y-m-d h:iA');
 
-$username = ucfirst ($_SESSION['user_name']);
- $userId = $_POST['user_id'];
- $adminId = $_POST['admin_id'];
+// $username = ucfirst ($_SESSION['user_name']);
+ $senderId = $_POST['sender_id'];
+ $receiverId = $_POST['receiver_id'];
   $message = $_POST['message'];
-  
-   $query = "INSERT INTO chat ( user_id, admin_id, message) VALUES('$userId','$adminId', '$message')";
- 
+
+    $query = "INSERT INTO chat (sender_id, receiver_id, sender_type, receiver_type, message) VALUES ('$senderId', '$receiverId', 'user', 'admin', '$message')";
   $data = mysqli_query($conn,$query);
 
   if($data)

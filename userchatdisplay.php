@@ -1,3 +1,9 @@
+
+<?php
+@include 'config.php';
+
+session_start();
+?>
 <html>
 <head>
 	<title>chats Display</title>
@@ -139,44 +145,49 @@
     <div class="user-img">
       <br><br>
       <br>
- 
-
-			
-
 
 
 <?php
 
-include("config.php");
 error_reporting(0);
-// print_r($_SESSION);
-
-session_start();
-print_r($_SESSION);
-
-// if(!isset($_SESSION['user_name']))
-
-// {
-	
-// }
-
-print_r($_POST);
-print_r($_SESSION['user_name']);
 
 $userId = $_SESSION['user_id'];
-echo $userId;
 
-$query= "SELECT * FROM chat WHERE user_id = '$userId'";
-// echo $query;
-// die;
+// $query= "
+// 			SELECT 
+// 				chat.id,	
+// 				chat.message,
+// 				chat.date,
+// 				users.name AS user_name
+// 			FROM 
+// 				chat 
+// 			JOIN 
+// 				users ON chat.receiver_id = users.id
+// 			WHERE chat.receiver_id = $userId
+// 			AND chat.sender_type = 'admin'
+// 			ORDER BY chat.date DESC
+
+// 		";
+
+$query = "
+    SELECT 
+        chat.id,    
+        chat.message,
+        chat.date,
+        users.name AS sender_user_name
+    FROM 
+        chat 
+    JOIN 
+        users ON chat.sender_id = users.id
+    WHERE chat.receiver_id = $userId
+    AND chat.sender_type = 'admin'
+    ORDER BY chat.date DESC
+";
+
 $data = mysqli_query($conn,$query);
 
 $total = mysqli_num_rows($data); 
 
-
-
-
-//echo $total;
 
 if($total != 0)
 {
@@ -189,7 +200,7 @@ if($total != 0)
 		<table class="table" border="3" cellspacing="7" width="60%">
 		<tr>
 		<th width="10%">Date/Time</th>
-		<th width="10%">Username</th>
+		<th width="10%">From Admin</th>
 		<th width="20%">Message</th>
 		</tr>
 		
@@ -197,15 +208,9 @@ if($total != 0)
 	<?php
 	while($result = mysqli_fetch_assoc($data))
 	{
-		$qry= "SELECT * FROM users WHERE id = '".$result['admin_id']."'";
-		
-		$dt = mysqli_query($conn,$qry);
-		$res = mysqli_fetch_assoc($dt);
-		print_r($res);
-		die;
 	echo "<tr>
 		      <td>".$result['date']."</td>
-		      <td>".$res['name']."</td>
+		      <td>".$result['sender_user_name']."</td>
 		      <td>".$result['message']."</td>      
 		</tr>
 		";  
