@@ -3,4 +3,8 @@
 
 
 admin username : admin@admin.com
-admin password : 
+admin password : pass
+
+
+user username : user@user.com
+user password : pass
